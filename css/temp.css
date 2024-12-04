@@ -1,0 +1,287 @@
+/* تنظیمات عمومی */
+body {
+    font-family: 'IRANSans', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* تنظیمات نوار */
+.navbar {
+    background-color: #fff;
+    padding: 10px 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    justify-items: left;
+    position: relative;
+}
+
+/* آیکون‌های پروفایل و سبد خرید */
+.navbar .profile-icon,
+.navbar .cart-icon {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar .profile-icon img,
+.navbar .cart-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.navbar .profile-icon:hover,
+.navbar .cart-icon:hover {
+    color: #007bff;
+}
+
+/* منوی بازشو پروفایل */
+.profile-dropdown,
+.cart-dropdown {
+    position: absolute;
+    top: 55px; /* تنظیم فاصله برای نمایش منو در زیر آیکون */
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    display: none;
+    animation: fadeIn 0.3s ease forwards;
+    z-index: 1000;
+}
+
+.profile-dropdown.active,
+.cart-dropdown.active {
+    display: block;
+}
+
+/* استایل‌های منو پروفایل */
+.profile-dropdown .profile-header {
+    text-align: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-dropdown .profile-header img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile-dropdown .profile-header h6 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.profile-dropdown .profile-header p {
+    font-size: 14px;
+    color: #666;
+}
+
+.profile-dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-dropdown ul li {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.profile-dropdown ul li:hover {
+    background-color: #f8f9fa;
+}
+
+.profile-dropdown .logout-btn {
+    display: block;
+    text-align: center;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    margin: 10px 15px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.profile-dropdown .logout-btn:hover {
+    background-color: #0056b3;
+}
+
+/* استایل‌های سبد خرید */
+.cart-dropdown .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-dropdown .cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-dropdown .cart-footer {
+    padding: 10px;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+/* انیمیشن */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* تنظیمات نوار جستجو */
+.navbar .navbar-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+}
+
+.navbar .navbar-search input {
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    outline: none;
+}
+
+.navbar .navbar-search button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.navbar .navbar-search button:hover {
+    background-color: #0056b3;
+}
+
+/* حالت دسکتاپ */
+@media (min-width: 992px) {
+    .navbar .navbar-collapse {
+        justify-content: flex-end;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .icons-container {
+        position: absolute;
+        left: 15px;
+    }
+
+    .navbar-brand {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .navbar .profile-icon,
+    .navbar .cart-icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    /* منو بازشو در دسکتاپ */
+    .profile-dropdown {
+        top: 70px;
+    }
+}
+
+/* حالت موبایل */
+@media (max-width: 991px) {
+    .navbar-nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .icons-container {
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .navbar .profile-icon,
+    .navbar .cart-icon {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+    }
+
+    /* تنظیمات برای منو همبرگری */
+    .navbar-toggler {
+        border: none;
+        background-color: #007bff;
+    }
+
+    .navbar-toggler:focus {
+        outline: none;
+    }
+
+    /* منوهای بازشو در موبایل */
+    .profile-dropdown {
+        top: 70px;
+        width: 100%;
+    }
+
+    .cart-dropdown {
+        top: 70px;
+        width: 100%;
+    }
+}
+
+/* استایل‌های عمومی لینک‌ها */
+.navbar-nav .nav-link {
+    color: #333;
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #f8f9fa;
+}
+
+/* تنظیمات عمومی */
+.icons-container {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    font-size: 20px;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود به حساب کاربری | وب سلامتی</title>
+    <!-- بوت‌استرپ -->
+    <link rel="stylesheet" href="css/bootstrap.rtl.min.css">
+    <!-- استایل‌های سفارشی -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/newStyle.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <!-- هدر -->
+    <header class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">وب سلامتی</a>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">خانه</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">محصولات</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="login.html">ورود</a></li>
+                    <li class="nav-item"><a class="nav-link" href="register.html">ثبت‌نام</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">تماس با ما</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="central-const.html">مشاوره</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- فرم لاگین -->
+    <main class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-5 shadow-sm" style="max-width: 400px; width: 100%;">
+        <h3 class="text-center mb-4">ورود به حساب کاربری</h3>
+        <form id="login-form" action="#" method="POST">
+            <!-- فیلد ایمیل -->
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="email" name="email" placeholder="ایمیل یا شماره تلفن" required>
+                <label for="email">ایمیل یا شماره تلفن</label>
+            </div>
+
+            <!-- دکمه تایید ایمیل -->
+            <div class="d-grid mb-3">
+                <button type="button" class="btn btn-dark rounded-pill" id="next-button">بعدی</button>
+            </div>
+
+            <!-- فیلد رمز عبور (در ابتدا مخفی) -->
+            <div id="password-step" style="display: none;">
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="رمز عبور" required>
+                    <label for="password">رمز عبور</label>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div>
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">مرا به خاطر بسپار</label>
+                    </div>
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-dark rounded-pill">ورود</button>
+                </div>
+            </div>
+            
+            <!-- لینک ثبت‌نام و فراموشی رمز عبور -->
+            <div class="text-center mt-3">
+                <p>حساب کاربری ندارید؟ <a href="register.html">ثبت‌نام</a></p>
+                <a href="forget-password.html" class="text-muted">فراموشی رمز عبور؟</a>
+            </div>
+        </form>
+    </div>
+</main>
+
+
+
+   <!-- new temps-->
+
+    
+    <!-- دکمه‌های شناور -->
+    <div id="menu-btn" class="floating-btn">
+        <span>&#9776;</span> <!-- آیکن همبرگر -->
+    </div>
+
+    <div id="cart-btn" class="floating-btn">
+        <span>&#128722;</span> <!-- آیکن سبد خرید -->
+    </div>
+
+    <div id="profile-btn" class="floating-btn">
+        <span>&#128100;</span> <!-- آیکن پروفایل -->
+    </div>
+
+    <!-- منو شناور -->
+    <div id="menu" class="menu">
+        <div class="menu-item"><a href="index.html"><i class="fas fa-home"></i> خانه</a></div>
+        <div class="menu-item"><a href="products.html"><i class="fas fa-box"></i> محصولات</a></div>
+        <div class="menu-item"><a href="cart.html"><i class="fas fa-shopping-cart"></i> سبد خرید</a></div>
+        <div class="menu-item"><a href="admin-consultation.html"><i class="fas fa-user-tie"></i> ادمین</a></div>
+        <div class="menu-item"><a href="bigbus.html"><i class="fas fa-briefcase"></i> مدیر کل</a></div>
+        <div class="menu-item"><a href="about.html"><i class="fas fa-info-circle"></i> درباره ما</a></div>
+        <div class="menu-item"><a href="contact.html"><i class="fas fa-envelope"></i> تماس با ما</a></div>
+        <div class="menu-item"><a href="login.html"><i class="fas fa-sign-in-alt"></i> ورود</a></div>
+        <div class="menu-item"><a href="logout.html"><i class="fas fa-sign-out-alt"></i> خروج</a></div>
+        <div class="menu-item search-box">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="جستجو کنید..." />
+                <i class="fas fa-search"></i>
+            </div>
+            <ul id="search-results" class="search-results">
+                <!-- نتایج جستجو به صورت داینامیک در اینجا ظاهر می‌شوند -->
+            </ul>
+    </div>
+        
+    </div>
+
+    <!-- سبد خرید -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cart" aria-labelledby="cartLabel">
+        <div class="offcanvas-header">
+            <h5 id="cartLabel">خوش آمدید</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+         
+            <button class="btn btn-success w-100 mt-3"></button>
+            <button class="btn btn-success w-100 mt-3"></button>
+            <button class="btn btn-success w-100 mt-3"></button>
+            <button class="btn btn-success w-100 mt-3"></button>
+            <button class="btn btn-success w-100 mt-3"></button>
+            <button class="btn btn-success w-100 mt-3"></button>
+            <button class="btn btn-success w-100 mt-3"></button>
+        </div>
+    </div>
+    <!-- پروفایل کاربری -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="profile" aria-labelledby="profileLabel">
+        <div class="offcanvas-header">
+            <h5 id="profileLabel">پروفایل کاربری</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="profile-header">
+                <img src="images/ico/prof2.jpg" alt="Profile Picture" class="img-fluid rounded-circle">
+                <h5>نام کاربر</h5>
+                <p>user@example.com</p>
+            </div>
+            <ul class="profile-menu">
+                <li><i class="fas fa-shopping-bag"></i> خریدهای من</li>
+                <li><i class="fas fa-comments"></i> مشاوره‌های من</li>
+            </ul>
+
+            <ul class="profile-menu-footer">
+                <li>
+                    <a href="https://www.instagram.com/yourpage" target="_blank" class="btn btn-apple w-100 text-start">
+                        <i class="fab fa-instagram"></i> صفحه اینستاگرام سلامتی
+                    </a>
+                </li>
+                <li>
+                    <a href="https://t.me/yourpage" target="_blank" class="btn btn-apple w-100 text-start">
+                        <i class="fab fa-telegram"></i> صفحه تلگرام سلامتی
+                    </a>
+                </li>
+            </ul>
+            
+            
+        </div>
+    </div>
+
+
+    <footer class="bg-dark text-light py-4">
+        <div class="container text-center">
+            <p>تمامی حقوق محفوظ است &copy; 2024</p>
+        </div>
+    </footer>
+    <!-- اسکریپت‌ها -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script >
+    document.getElementById("login-form").addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    // فرض: عملیات ورود کاربر موفقیت‌آمیز است
+    const user = {
+        id: 1,
+        name: "کاربر تست",
+        email: "test@example.com",
+    };
+
+    // ذخیره اطلاعات کاربر در Local Storage
+    localStorage.setItem("user", JSON.stringify(user));
+
+    // بررسی بازگشت به صفحه قبلی
+    const urlParams = new URLSearchParams(window.location.search);
+    const redirectUrl = urlParams.get("redirect");
+
+    if (redirectUrl) {
+        window.location.href = redirectUrl;
+    } else {
+        window.location.href = "index.html"; // هدایت به صفحه اصلی
+    }
+});
+
+    </script>
+    <script src="js/products.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script  src="js/template.js"></script>
+</body>
+</html>

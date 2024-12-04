@@ -1,0 +1,115 @@
+/* استایل‌های پایه برای تم لایت */
+body {
+    background-color: #f7f7f7;  /* پس‌زمینه روشن */
+    color: #333;  /* رنگ متن تیره */
+    transition: all 0.3s ease;  /* انیمیشن انتقال به حالت جدید */
+  }
+  
+  /* استایل‌های اسلاید بار در تم لایت */
+  .offcanvas {
+    background-color: #fff;  /* پس‌زمینه سفید */
+    color: #333;  /* رنگ متن تیره */
+    transition: transform 0.6s ease-in-out;  /* انیمیشن ترانزیشن */
+    visibility: hidden;  /* مخفی بودن اسلاید بار به صورت پیش‌فرض */
+    transform: translateX(-100%); /* اسلایدها از سمت چپ به سمت راست می‌آیند */
+  }
+  
+  .offcanvas.show {
+    visibility: visible;  /* نمایش اسلاید بار */
+    transform: translateX(0); /* نمایش اسلاید بار در موقعیت درست */
+  }
+  
+  /* دکمه‌های شناور */
+  .floating-btn {
+    background-color: #909595; /* رنگ دکمه شناور در حالت لایت */
+    color: #fff;
+    position: fixed;
+    bottom: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1050;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+
+  
+  /* دکمه پروفایل در سمت چپ */
+  #profile-btn {
+    right: 20px;
+  }
+  
+  /* دکمه سبد خرید در سمت راست */
+  #cart-btn {
+    left: 20px;
+  }
+  #menu-btn {
+    left: 50%;
+  }
+  
+  /* استایل پنل‌های offcanvas */
+  .offcanvas-body {
+    background-color: #fff; /* پس‌زمینه سفید برای اسلاید بار */
+    color: #333;  /* رنگ متن تیره */
+  }
+  
+  /* استایل پروفایل (شبیه تلگرام) */
+  .offcanvas-profile {
+    background-color: #f7f7f7; /* رنگ زمینه پروفایل */
+    padding: 20px;
+    border-radius: 12px;
+  }
+  
+  /* استایل منوهای پروفایل */
+  .profile-menu li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .profile-menu li:last-child {
+    border-bottom: none;
+  }
+  
+  .profile-menu li:hover {
+    background-color: #f0f0f0;  /* رنگ پس‌زمینه منو روی هاور */
+  }
+  
+  /* برای صفحات کوچک */
+  @media (max-width: 767px) {
+    #menu-btn {
+      display: block;  /* نمایش دکمه منو */
+    }
+  }
+  
+  /* استایل دکمه‌های پروفایل و سبد خرید */
+  #profile-btn, #cart-btn {
+    background-color: #e8eae9;
+  }
+  
+  #profile-btn:hover, #cart-btn:hover {
+    background-color: #fefeff;
+  }
+  
+  /* استایل تغییر تم */
+  .theme-toggle {
+    color: #bbb;  /* رنگ آیکن ماه و خورشید */
+  }
+  
+  body.dark-mode .theme-toggle {
+    color: #ddd;  /* رنگ روشن برای آیکن در حالت دارک */
+  }
+  
+  /* برای صفحات کوچک */
+  @media (max-width: 767px) {
+    #menu-btn {
+      display: block;  /* نمایش دکمه منو فقط در صفحات کوچک */
+    }
+  }
+  

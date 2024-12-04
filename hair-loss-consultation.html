@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشاوره ریزش مو | وب سلامتی</title>
+    <!-- بوت‌استرپ -->
+    <!-- بوت‌استرپ -->
+    <link rel="stylesheet" href="css/bootstrap.rtl.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin-consultation.css">
+
+    <link rel="stylesheet" href="css/newStyle.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- هدر -->
+    <header class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">وب سلامتی</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">خانه</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">محصولات</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="login.html">ورود</a></li>
+                    <li class="nav-item"><a class="nav-link" href="register.html">ثبت‌نام</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">تماس با ما</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="central-const.html">مشاوره</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- محتوای صفحه -->
+    <main class="container my-5">
+        <h2 class="text-center mb-4">مشاوره ریزش مو</h2>
+        <p class="text-center mb-5">اطلاعات مرتبط با درمان ریزش مو را مشاهده کنید.</p>
+
+        <!-- ویدیوها -->
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <video controls class="w-100">
+                    <source src="videos/fibroid-video1.mp4" type="video/mp4">
+                    مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+                </video>
+                <h5 class="mt-2">ویدیو: درمان‌های ریزش مو</h5>
+            </div>
+            <div class="col-md-6 mb-4">
+                <video controls class="w-100">
+                    <source src="videos/fibroid-video2.mp4" type="video/mp4">
+                    مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+                </video>
+                <h5 class="mt-2">ویدیو: پیشگیری از ریزش مو</h5>
+            </div>
+        </div>
+
+        <!-- توضیحات -->
+        <section class="mb-5">
+            <h3>اطلاعات مرتبط</h3>
+            <p>ریزش مو یکی از شایع‌ترین مشکلات زنان است. در این بخش به توضیح روش‌های درمان و پیشگیری پرداخته شده است.</p>
+        </section>
+
+        <!-- دکمه مشاوره اختصاصی -->
+        <div class="text-center">
+            <a href="private-consultation.html" class="btn btn-apple">درخواست مشاوره تخصصی </a>
+        </div>
+    </main>
+    <!-- اسکریپت‌ها -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/allcons.js"></script>
+
+    <!-- دکمه‌های شناور -->
+    <div id="menu-btn" class="floating-btn">
+        <span>&#9776;</span> <!-- آیکن همبرگر -->
+    </div>
+    <div id="cart-btn" class="floating-btn">
+        <span>&#128722;</span> <!-- آیکن سبد خرید -->
+    </div>
+
+    <div id="profile-btn" class="floating-btn">
+        <span>&#128100;</span> <!-- آیکن پروفایل -->
+    </div>
+
+    <!-- منو شناور -->
+    <div id="menu" class="menu">
+        <div class="menu-item"><a href="index.html"><i class="fas fa-home"></i> خانه</a></div>
+        <div class="menu-item"><a href="products.html"><i class="fas fa-box"></i> محصولات</a></div>
+        <div class="menu-item"><a href="about.html"><i class="fas fa-info-circle"></i> درباره ما</a></div>
+        <div class="menu-item"><a href="contact.html"><i class="fas fa-envelope"></i> تماس با ما</a></div>
+        <div class="menu-item"><a href="central-const.html"><i class="fas fa-envelope"></i> مشاوره‌ها</a></div>
+
+        <div class="menu-item"><a href="login.html"><i class="fas fa-sign-in-alt"></i> ورود</a></div>
+        <div class="menu-item"><a href="logout.html"><i class="fas fa-sign-out-alt"></i> خروج</a></div>
+        <div class="menu-item search-box">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="جستجو کنید..." />
+                <i class="fas fa-search"></i>
+            </div>
+            <ul id="search-results" class="search-results">
+                <!-- نتایج جستجو به صورت داینامیک در اینجا ظاهر می‌شوند -->
+            </ul>
+    </div>
+        
+    </div>
+
+    <!-- سبد خرید -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cart" aria-labelledby="cartLabel">
+        <div class="offcanvas-header">
+            <h5 id="cartLabel">خوش آمدید</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+         
+            <button class="btn btn-success w-100 mt-3"></button>
+            <button class="btn btn-success w-100 mt-3"></button>
+            <button class="btn btn-success w-100 mt-3"></button>
+            <button class="btn btn-success w-100 mt-3"></button>
+            <button class="btn btn-success w-100 mt-3"></button>
+            <button class="btn btn-success w-100 mt-3"></button>
+            <button class="btn btn-success w-100 mt-3"></button>
+        </div>
+    </div>
+
+    <!-- پروفایل کاربری -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="profile" aria-labelledby="profileLabel">
+        <div class="offcanvas-header">
+            <h5 id="profileLabel">پروفایل کاربری</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="profile-header">
+                <img src="images/ico/prof2.jpg" alt="Profile Picture" class="img-fluid rounded-circle">
+                <h5>نام کاربر</h5>
+                <p>user@example.com</p>
+            </div>
+            <ul class="profile-menu">
+                <li><i class="fas fa-shopping-bag"></i> خریدهای من</li>
+                <li><i class="fas fa-comments"></i> مشاوره‌های من</li>
+            </ul>
+
+            <ul class="profile-menu-footer">
+                <li><i class="fas fa-shopping-bag"></i> صفحه اینستاگرام سلامتی</li>
+                <li><i class="fas fa-comments"></i> صفحه تلگرام سلامتی</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <footer class="bg-dark text-light py-4">
+        <div class="container text-center">
+            <p>تمامی حقوق محفوظ است &copy; 2024</p>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script  src="js/template.js">    </script>
+    <script  src="js/admin-consultation.js">    </script>
+    <!-- اسکریپت‌ها -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/allcons.js"></script>
+
+
+</body>
+</html>
+

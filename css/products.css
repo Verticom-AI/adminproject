@@ -1,0 +1,115 @@
+/* استایل پایه */
+body {
+    font-family: 'IRANSans', sans-serif;
+    background-color: #f8f9fa;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* کارت محصول */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.card .btn {
+    border-radius: 50px;
+}
+
+/* سبد خرید */
+.offcanvas {
+    background-color: #f8f9fa;
+}
+
+.offcanvas-header {
+    border-bottom: 1px solid #ddd;
+}
+
+#cart-items .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    display: inline-block;
+    background: #f5f5f7; /* رنگ پس‌زمینه شبیه اپل */
+    color: #1d1d1f; /* متن مشکی با کنتراست بالا */
+    font-weight: 600; /* وزن متن کمی سنگین‌تر */
+    font-size: 16px; /* اندازه متن */
+    padding: 12px 24px; /* فاصله داخلی */
+    border: 1px solid #d2d2d7; /* حاشیه ظریف */
+    border-radius: 24px; /* گوشه‌های گرد */
+    text-decoration: none; /* حذف خط زیر متن */
+    transition: all 0.3s ease; /* انیمیشن نرم */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* سایه ظریف */
+    text-align: center;
+    line-height: 1.5;
+}
+
+button:hover {
+    background: #e5e5ea; /* تغییر رنگ در هاور */
+    color: #1d1d1f; /* متن مشکی */
+    border-color: #c7c7cc; /* تغییر رنگ حاشیه */
+    transform: translateY(-2px); /* حرکت کمی به بالا */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* افزایش سایه */
+}
+.btn-apple {
+    display: inline-block;
+    background: #f5f5f7; /* رنگ پس‌زمینه شبیه اپل */
+    color: #1d1d1f; /* متن مشکی با کنتراست بالا */
+    font-weight: 600; /* وزن متن کمی سنگین‌تر */
+    font-size: 16px; /* اندازه متن */
+    padding: 12px 24px; /* فاصله داخلی */
+    border: 1px solid #d2d2d7; /* حاشیه ظریف */
+    border-radius: 24px; /* گوشه‌های گرد */
+    text-decoration: none; /* حذف خط زیر متن */
+    transition: all 0.3s ease; /* انیمیشن نرم */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* سایه ظریف */
+    text-align: center;
+    line-height: 1.5;
+}
+
+.btn-apple:hover {
+    background: #e5e5ea; /* تغییر رنگ در هاور */
+    color: #1d1d1f; /* متن مشکی */
+    border-color: #c7c7cc; /* تغییر رنگ حاشیه */
+    transform: translateY(-2px); /* حرکت کمی به بالا */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* افزایش سایه */
+}
+.btn-apple:active {
+    background: #d2d2d7; /* رنگ کمی تیره‌تر */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* کاهش سایه */
+    transform: translateY(1px); /* حرکت کمی به پایین */
+}

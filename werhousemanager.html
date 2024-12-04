@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدیریت انبار | وب سلامتی</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.rtl.min.css">
+       <!-- بوت‌استرپ -->
+       <link rel="stylesheet" href="css/bootstrap.rtl.min.css">
+       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+       <link rel="stylesheet" href="css/admin-consultation.css">
+   
+       <link rel="stylesheet" href="css/newStyle.css">
+   
+       <link rel="stylesheet" href="css/style.css">
+   </head> 
+    <style>
+        body {
+            font-family: 'IRANSans', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .details-row {
+            display: none;
+            background-color: #f1f1f1;
+        }
+
+        .details-row td {
+            padding: 10px;
+        }
+
+        .details-toggle {
+            cursor: pointer;
+            color: #007bff;
+        }
+
+        .details-toggle:hover {
+            text-decoration: underline;
+        }
+
+        .badge-paid {
+            background-color: #28a745;
+        }
+
+        .badge-unpaid {
+            background-color: #dc3545;
+        }
+
+        .badge-shipped {
+            background-color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <!-- هدر -->
+    <header class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">وب سلامتی</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">خانه</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="inventory-management.html">مدیریت انبار</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- محتوای اصلی -->
+    <div class="container my-4">
+        <h1 class="text-center mb-4">مدیریت انبار</h1>
+        <table class="table table-bordered">
+            <thead class="table-light">
+                <tr>
+                    <th>#</th>
+                    <th>نام کاربر</th>
+                    <th>شماره سفارش</th>
+                    <th>وضعیت پرداخت</th>
+                    <th>عملیات</th>
+                </tr>
+            </thead>
+            <tbody id="order-list">
+                <!-- لیست سفارش‌ها -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // داده‌های نمونه
+        const orders = [
+            {
+                id: 1,
+                user: "علی محمدی",
+                orderNumber: "123456",
+                paymentStatus: "پرداخت‌شده",
+                shippingStatus: "در انتظار ارسال",
+                address: "تهران، خیابان ولیعصر، پلاک 50",
+                phone: "09121234567",
+                postalCode: "1234567890",
+                products: [
+                    { name: "چای سبز", quantity: 2 },
+                    { name: "عسل طبیعی", quantity: 1 },
+                ],
+            },
+            {
+                id: 2,
+                user: "سارا احمدی",
+                orderNumber: "654321",
+                paymentStatus: "در انتظار پرداخت",
+                shippingStatus: "در انتظار ارسال",
+                address: "مشهد، بلوار معلم، کوچه 12، پلاک 10",
+                phone: "09137654321",
+                postalCode: "9876543210",
+                products: [
+                    { name: "دمنوش نعناع", quantity: 3 },
+                    { name: "چای سیاه", quantity: 2 },
+                ],
+            },
+        ];
+
+        // نمایش لیست سفارش‌ها
+        const orderList = document.getElementById("order-list");
+        orders.forEach((order, index) => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${order.user}</td>
+                <td>${order.orderNumber}</td>
+                <td>
+                    <span class="badge ${order.paymentStatus === "پرداخت‌شده" ? "badge-paid" : "badge-unpaid"}">
+                        ${order.paymentStatus}
+                    </span>
+                </td>
+                <td>
+                    <span class="details-toggle" data-id="${order.id}">نمایش جزئیات</span>
+                </td>
+            `;
+            orderList.appendChild(row);
+
+            // جزئیات سفارش
+            const detailsRow = document.createElement("tr");
+            detailsRow.className = "details-row";
+            detailsRow.innerHTML = `
+                <td colspan="5">
+                    <strong>آدرس:</strong> ${order.address}<br>
+                    <strong>تلفن:</strong> ${order.phone}<br>
+                    <strong>کد پستی:</strong> ${order.postalCode}<br>
+                    <strong>محصولات:</strong>
+                    <ul>
+                        ${order.products
+                            .map(
+                                (product) =>
+                                    `<li>${product.name} - ${product.quantity} عدد</li>`
+                            )
+                            .join("")}
+                    </ul>
+                    <button class="btn btn-sm btn-primary mark-shipped" data-id="${order.id}">${order.shippingStatus}</button>
+                </td>
+            `;
+            orderList.appendChild(detailsRow);
+        });
+
+        // مدیریت نمایش جزئیات
+        document.querySelectorAll(".details-toggle").forEach((toggle) => {
+            toggle.addEventListener("click", () => {
+                const id = toggle.dataset.id;
+                const detailsRow = toggle.parentElement.parentElement.nextElementSibling;
+
+                if (detailsRow.classList.contains("details-row")) {
+                    detailsRow.style.display =
+                        detailsRow.style.display === "none" || detailsRow.style.display === ""
+                            ? "table-row"
+                            : "none";
+                }
+            });
+        });
+
+        // مدیریت ارسال سفارش
+        document.querySelectorAll(".mark-shipped").forEach((button) => {
+            button.addEventListener("click", () => {
+                const id = button.dataset.id;
+                const order = orders.find((o) => o.id === parseInt(id));
+
+                if (order.paymentStatus === "در انتظار پرداخت") {
+                    alert("این سفارش هنوز پرداخت نشده است.");
+                    return;
+                }
+
+                order.shippingStatus = "ارسال شده";
+                button.textContent = order.shippingStatus;
+                button.classList.remove("btn-primary");
+                button.classList.add("btn-success");
+                button.disabled = true;
+            });
+        });
+    </script>
+    
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/products.js"></script>
+    
+    <!-- دکمه‌های شناور -->
+    <div id="menu-btn" class="floating-btn">
+        <span>&#9776;</span> <!-- آیکن همبرگر -->
+    </div>
+    <div id="cart-btn" class="floating-btn" >
+        <span>💬</span> <!-- آیکن جدید برای مشاوره‌ها -->
+    </div>
+
+    <div id="profile-btn" class="floating-btn">
+        <span>&#128100;</span> <!-- آیکن پروفایل -->
+    </div>
+
+    <!-- منو شناور -->
+    <div id="menu" class="menu">
+        <div class="menu-item"><a href="index.html"><i class="fas fa-home"></i> خانه</a></div>
+        <div class="menu-item"><a href="products.html"><i class="fas fa-box"></i> محصولات</a></div>
+        <div class="menu-item"><a href="about.html"><i class="fas fa-info-circle"></i> درباره ما</a></div>
+        <div class="menu-item"><a href="contact.html"><i class="fas fa-envelope"></i> تماس با ما</a></div>
+        <div class="menu-item"><a href="central-const.html"><i class="fas fa-envelope"></i> مشاوره‌ها</a></div>
+
+        <div class="menu-item"><a href="login.html"><i class="fas fa-sign-in-alt"></i> ورود</a></div>
+        <div class="menu-item"><a href="logout.html"><i class="fas fa-sign-out-alt"></i> خروج</a></div>
+        <div class="menu-item search-box">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="جستجو کنید..." />
+                <i class="fas fa-search"></i>
+            </div>
+            <ul id="search-results" class="search-results">
+                <!-- نتایج جستجو به صورت داینامیک در اینجا ظاهر می‌شوند -->
+            </ul>
+    </div>
+        
+    </div>
+
+    <!-- سبد خرید -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cart" aria-labelledby="cartLabel">
+        <div class="offcanvas-header">
+            <h5 id="cartLabel">خوش آمدید</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+         
+            <button class="btn btn-success w-100 mt-3"></button>
+            <button class="btn btn-success w-100 mt-3"></button>
+            <button class="btn btn-success w-100 mt-3"></button>
+            <button class="btn btn-success w-100 mt-3"></button>
+            <button class="btn btn-success w-100 mt-3"></button>
+            <button class="btn btn-success w-100 mt-3"></button>
+            <button class="btn btn-success w-100 mt-3"></button>
+        </div>
+    </div>
+
+    <!-- پروفایل کاربری -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="profile" aria-labelledby="profileLabel">
+        <div class="offcanvas-header">
+            <h5 id="profileLabel">پروفایل کاربری</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="profile-header">
+                <img src="images/ico/prof2.jpg" alt="Profile Picture" class="img-fluid rounded-circle">
+                <h5>نام کاربر</h5>
+                <p>user@example.com</p>
+            </div>
+            <ul class="profile-menu">
+                <li><i class="fas fa-shopping-bag"></i> خریدهای من</li>
+                <li><i class="fas fa-comments"></i> مشاوره‌های من</li>
+            </ul>
+
+            <ul class="profile-menu-footer">
+                <li><i class="fas fa-shopping-bag"></i> صفحه اینستاگرام سلامتی</li>
+                <li><i class="fas fa-comments"></i> صفحه تلگرام سلامتی</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <footer class="bg-dark text-light py-4">
+        <div class="container text-center">
+            <p>تمامی حقوق محفوظ است &copy; 2024</p>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script  src="js/template.js">    </script>
+    <script  src="js/admin-consultation.js">    </script>
+    <!-- اسکریپت‌ها -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/allcons.js"></script>
+
+
+</body>
+</html>

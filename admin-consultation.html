@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدیریت چت</title>
+    <link rel="stylesheet" href="css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="css/admin-consultation.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/newStyle.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+  </head>
+
+<body>
+    
+    <!-- هدر -->
+    <header class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">وب سلامتی</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">خانه</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">محصولات</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="login.html">ورود</a></li>
+                    <li class="nav-item"><a class="nav-link" href="register.html">ثبت‌نام</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">تماس با ما</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="central-const.html">مشاوره</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container my-4">
+        <button id="toggle-chat-list" class="btn btn-dark mb-3">مشاوره‌ها</button>
+
+        <div class="chat-container">
+            <!-- فضای چت -->
+            <div class="chat-area">
+                <div class="chat-box" id="chat-box">
+                    <!-- پیام‌ها با جاوااسکریپت پر می‌شود -->
+                </div>
+                <div class="chat-footer">
+                    <input type="text" id="chat-input" class="form-control" placeholder="پیام خود را بنویسید...">
+                    <button id="action-button" class="btn btn-dark">🎙️</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- مشاوره ها  اسلاید بار -->
+    <div class="overlay" id="overlay"></div>
+    <div class="slide-bar" id="slide-bar">
+        <h5 class="text-center">مشاوره‌ها</h5>
+        <div id="chat-list-container" class="chat-list">
+            <!-- لیست مشاوره‌ها با جاوااسکریپت پر می‌شود -->
+        </div>
+    </div>
+
+<section> 
+
+
+        <!-- ایجاد نسخه درمانی -->
+        <div class="container my-5">
+            <h1 class="text-center mb-4">ایجاد نسخه درمانی</h1>
+            <div class="mb-3">
+                <input type="text" id="product-search" class="form-control" placeholder="جستجوی محصول...">
+            </div>
+            <div id="product-list" class="product-list">
+                <!-- محصولات جستجو شده اینجا نمایش داده می‌شوند -->
+            </div>
+            <table class="table table-bordered mt-3">
+                <thead class="table-light">
+                    <tr>
+                        <th>نام محصول</th>
+                        <th>تعداد</th>
+                        <th>حذف</th>
+                    </tr>
+                </thead>
+                <tbody id="prescription-table">
+                    <!-- محصولات اضافه شده به نسخه اینجا نمایش داده می‌شوند -->
+                </tbody>
+            </table>
+            <button id="finalize-prescription" class="btn btn-dark w-100 mt-3">ارسال نسخه به کاربر</button>
+        </div>
+    
+
+    
+    <!-- دکمه‌های شناور -->
+    <div id="menu-btn" class="floating-btn">
+        <span>&#9776;</span> <!-- آیکن همبرگر -->
+    </div>
+
+    <!-- دکمه مشاوره‌ها به دکمه شناور جدید تغییر یافت -->
+<div id="consultation-btn" class="floating-btn">
+    <span>💬</span> <!-- آیکن جدید برای مشاوره‌ها -->
+</div>
+
+    <div id="profile-btn" class="floating-btn">
+        <span>&#128100;</span> <!-- آیکن پروفایل -->
+    </div>
+
+    <!-- منو شناور -->
+    <div id="menu" class="menu">
+        <div class="menu-item"><a href="index.html"><i class="fas fa-home"></i> خانه</a></div>
+        <div class="menu-item"><a href="admin-consultation.html"><i class="fas fa-user-tie"></i> ادمین</a></div>
+        <div class="menu-item"><a href="about.html"><i class="fas fa-info-circle"></i> درباره ما</a></div>
+        <div class="menu-item"><a href="contact.html"><i class="fas fa-envelope"></i> تماس با ما</a></div>
+        <div class="menu-item"><a href="login.html"><i class="fas fa-sign-in-alt"></i> ورود</a></div>
+        <div class="menu-item"><a href="logout.html"><i class="fas fa-sign-out-alt"></i> خروج</a></div>
+        <div class="menu-item search-box">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="جستجو کنید..." />
+                <i class="fas fa-search"></i>
+            </div>
+            <ul id="search-results" class="search-results">
+                <!-- نتایج جستجو به صورت داینامیک در اینجا ظاهر می‌شوند -->
+            </ul>
+    </div>
+        
+    </div>
+
+    <!-- سبد خرید -->
+
+    
+        <!-- اسلاید بار -->
+        <div class="slide-bar" id="slide-bar">
+            <h5 class="text-center">مشاوره‌ها</h5>
+            <div id="chat-list-container" class="chat-list">
+                <!-- لیست مشاوره‌ها با جاوااسکریپت پر می‌شود -->
+            </div>
+        </div>
+    </div>
+    <!-- پروفایل کاربری -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="profile" aria-labelledby="profileLabel">
+        <div class="offcanvas-header">
+            <h5 id="profileLabel">پروفایل کاربری</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="profile-header">
+                <img src="images/ico/prof2.jpg" alt="Profile Picture" class="img-fluid rounded-circle">
+                <h5>نام کاربر</h5>
+                <p>user@example.com</p>
+            </div>
+            <ul class="profile-menu">
+                <li><i class="fas fa-shopping-bag"></i> خریدهای من</li>
+                <li><i class="fas fa-comments"></i> مشاوره‌های من</li>
+            </ul>
+
+            <ul class="profile-menu-footer">
+                <li>
+                    <a href="https://www.instagram.com/yourpage" target="_blank" class="btn btn-apple w-100 text-start">
+                        <i class="fab fa-instagram"></i> صفحه اینستاگرام سلامتی
+                    </a>
+                </li>
+                <li>
+                    <a href="https://t.me/yourpage" target="_blank" class="btn btn-apple w-100 text-start">
+                        <i class="fab fa-telegram"></i> صفحه تلگرام سلامتی
+                    </a>
+                </li>
+            </ul>
+            
+            
+        </div>
+    </div>
+
+
+    <footer class="bg-dark text-light py-4">
+        <div class="container text-center">
+            <p>تمامی حقوق محفوظ است &copy; 2024</p>
+        </div>
+    </footer>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+
+<script  src="js/admin-consultation.js"></script>
+
+
+
+<script> 
+
+
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+/* انیمیشن Fade-In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* حرکت از پایین */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* به جایگاه اصلی برمی‌گردد */
+    }
+}
+
+/* اعمال انیمیشن به کارت‌ها */
+.card {
+    opacity: 0; /* ابتدا پنهان */
+    animation: fadeIn 0.8s ease-in-out forwards; /* انیمیشن */
+}
+
+/* تاخیر برای کارت‌ها */
+.card:nth-child(1) {
+    animation-delay: 0.1s; /* کارت اول */
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.3s; /* کارت دوم */
+}
+
+.card:nth-child(3) {
+    animation-delay: 0.5s; /* کارت سوم */
+}
+/* انیمیشن حرکت از پایین به بالا */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px); /* حرکت از پایین */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* رسیدن به جایگاه اصلی */
+    }
+}
+
+/* اعمال انیمیشن به بخش‌ها */
+.section {
+    opacity: 0; /* پنهان بودن پیش از مشاهده */
+    animation: slideInUp 1s ease-out forwards;
+    transition: all 0.5s ease-in-out;
+}
+
+/* تاخیر برای اسکرول */
+.section-delay-1 {
+    animation-delay: 0.2s;
+}
+
+.section-delay-2 {
+    animation-delay: 0.4s;
+}
+
+.section-delay-3 {
+    animation-delay: 0.6s;
+}
+
+button {
+    display: inline-block;
+    background: #f5f5f7; /* رنگ پس‌زمینه شبیه اپل */
+    color: #1d1d1f; /* متن مشکی با کنتراست بالا */
+    font-weight: 600; /* وزن متن کمی سنگین‌تر */
+    font-size: 16px; /* اندازه متن */
+    padding: 12px 24px; /* فاصله داخلی */
+    border: 1px solid #d2d2d7; /* حاشیه ظریف */
+    border-radius: 24px; /* گوشه‌های گرد */
+    text-decoration: none; /* حذف خط زیر متن */
+    transition: all 0.3s ease; /* انیمیشن نرم */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* سایه ظریف */
+    text-align: center;
+    line-height: 1.5;
+}
+
+button:hover {
+    background: #e5e5ea; /* تغییر رنگ در هاور */
+    color: #1d1d1f; /* متن مشکی */
+    border-color: #c7c7cc; /* تغییر رنگ حاشیه */
+    transform: translateY(-2px); /* حرکت کمی به بالا */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* افزایش سایه */
+}
+.btn-apple {
+    display: inline-block;
+    background: #f5f5f7; /* رنگ پس‌زمینه شبیه اپل */
+    color: #1d1d1f; /* متن مشکی با کنتراست بالا */
+    font-weight: 600; /* وزن متن کمی سنگین‌تر */
+    font-size: 16px; /* اندازه متن */
+    padding: 12px 24px; /* فاصله داخلی */
+    border: 1px solid #d2d2d7; /* حاشیه ظریف */
+    border-radius: 24px; /* گوشه‌های گرد */
+    text-decoration: none; /* حذف خط زیر متن */
+    transition: all 0.3s ease; /* انیمیشن نرم */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* سایه ظریف */
+    text-align: center;
+    line-height: 1.5;
+}
+
+.btn-apple:hover {
+    background: #e5e5ea; /* تغییر رنگ در هاور */
+    color: #1d1d1f; /* متن مشکی */
+    border-color: #c7c7cc; /* تغییر رنگ حاشیه */
+    transform: translateY(-2px); /* حرکت کمی به بالا */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* افزایش سایه */
+}
+.btn-apple:active {
+    background: #d2d2d7; /* رنگ کمی تیره‌تر */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* کاهش سایه */
+    transform: translateY(1px); /* حرکت کمی به پایین */
+}
+

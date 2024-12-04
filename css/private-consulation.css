@@ -1,0 +1,203 @@
+/* فونت پیش‌فرض */
+body {
+    font-family: 'IRANSans', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* استایل فرم */
+form {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* فیلدهای فرم */
+.form-floating input,
+.form-floating textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 16px;
+    font-size: 1.2rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.form-floating input:focus,
+.form-floating textarea:focus,
+input[type="file"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+    outline: none;
+}
+
+/* لیبل‌های شناور */
+.form-floating label {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    right:12px;
+
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #adb5bd;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.form-floating input:focus + label,
+.form-floating input:not(:placeholder-shown) + label,
+.form-floating textarea:focus + label,
+.form-floating textarea:not(:placeholder-shown) + label {
+    top: -5px;
+    font-size: 1rem;
+    color: #007bff;
+}
+
+
+
+/* استایل برای ورودی آپلود */
+input[type="file"] {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    background-color: #f8f9fa;
+}
+
+/* پیام هشدار */
+.text-danger {
+    font-size: 0.9rem;
+    margin-top: 5px;
+    color: #dc3545; /* قرمز */
+}
+
+/* پیام هشدار (پنهان) */
+.d-none {
+    display: none;
+}
+#preview-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.preview-item {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.preview-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.preview-item .remove-preview {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #dc3545;
+    color: #fff;
+    font-size: 12px;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.preview-item .remove-preview:hover {
+    background-color: #bd2130;
+}
+
+/*<style>*/
+body {
+    font-family: 'IRANSans', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.audio-control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.record-button {
+    width: 70px;
+    height: 70px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.record-button:active {
+    background-color: #b02a37;
+    transform: scale(0.9);
+}
+
+.audio-preview {
+    margin-top: 20px;
+}
+
+.audio-preview audio {
+    display: block;
+    margin: 10px auto;
+}
+
+.btn-apple {
+    display: inline-block;
+    background: #f5f5f7; /* رنگ پس‌زمینه شبیه اپل */
+    color: #1d1d1f; /* متن مشکی با کنتراست بالا */
+    font-weight: 600; /* وزن متن کمی سنگین‌تر */
+    font-size: 16px; /* اندازه متن */
+    padding: 12px 24px; /* فاصله داخلی */
+    border: 1px solid #d2d2d7; /* حاشیه ظریف */
+    border-radius: 24px; /* گوشه‌های گرد */
+    text-decoration: none; /* حذف خط زیر متن */
+    transition: all 0.3s ease; /* انیمیشن نرم */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* سایه ظریف */
+    text-align: center;
+    line-height: 1.5;
+}
+
+.btn-apple:hover {
+    background: #e5e5ea; /* تغییر رنگ در هاور */
+    color: #1d1d1f; /* متن مشکی */
+    border-color: #c7c7cc; /* تغییر رنگ حاشیه */
+    transform: translateY(-2px); /* حرکت کمی به بالا */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* افزایش سایه */
+}
+.btn-apple:active {
+    background: #d2d2d7; /* رنگ کمی تیره‌تر */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* کاهش سایه */
+    transform: translateY(1px); /* حرکت کمی به پایین */
+}

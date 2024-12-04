@@ -1,0 +1,219 @@
+
+        /* تنظیمات عمومی */
+        body {
+            font-family: 'IRANSans', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        /* نوار بالا */
+        .navbar {
+            background-color: #fff;
+            padding: 10px 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            justify-items: left;
+        }
+
+        .navbar .profile-icon,
+        .navbar .cart-icon {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .navbar .profile-icon img,
+        .navbar .cart-icon img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .navbar .profile-icon:hover,
+        .navbar .cart-icon:hover {
+            color: #007bff;
+        }
+
+        /* منوی بازشو پروفایل */
+        .profile-dropdown {
+            position: absolute;
+            top: 7%;
+            left:0;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            z-index: 1000;
+            display: none;
+            animation: fadeIn 0.3s ease forwards;
+        }
+
+        
+        .profile-dropdown.active {
+            display: block;
+        }
+
+        .profile-dropdown .profile-header {
+            text-align: center;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .profile-dropdown .profile-header img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .profile-dropdown .profile-header h6 {
+            margin: 0;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .profile-dropdown .profile-header p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .profile-dropdown ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .profile-dropdown ul li {
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background-color 0.2s ease;
+            cursor: pointer;
+        }
+
+        .profile-dropdown ul li:hover {
+            background-color: #f8f9fa;
+        }
+
+        .profile-dropdown .logout-btn {
+            display: block;
+            text-align: center;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 15px;
+            margin: 10px 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .profile-dropdown .logout-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* سبد خرید بازشو */
+        .cart-dropdown {
+            position: absolute;
+            top: 7%;
+            left: 0;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            z-index: 1000;
+            display: none;
+            animation: fadeIn 0.3s ease forwards;
+        }
+
+        .cart-dropdown.active {
+            display: block;
+        }
+
+        .cart-dropdown .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-dropdown .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-dropdown .cart-footer {
+            padding: 10px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+
+/* تنظیمات عمومی نوار */
+.navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.icons-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* حالت دسکتاپ */
+@media (min-width: 992px) {
+    .navbar .navbar-collapse {
+        justify-content: flex-end;
+    }
+
+    .navbar-nav {
+        flex-direction: row; /* لینک‌ها به صورت افقی */
+        gap: 20px;
+    }
+
+    .icons-container {
+        position: relative;
+        left: 15px; /* قرار دادن آیکون‌ها سمت چپ */
+    }
+
+    .navbar-brand {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* حالت موبایل */
+@media (max-width: 991px) {
+    .navbar-nav {
+        flex-direction: column; /* لینک‌ها به صورت عمودی */
+        text-align: center;
+    }
+
+    .icons-container {
+        justify-content: center;
+        margin-top: 10px;
+    }
+}

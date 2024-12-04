@@ -1,0 +1,253 @@
+/* استایل‌های پایه برای تم لایت */
+body {
+  background-color: #f7f7f7;  /* پس‌زمینه روشن */
+  color: #333;  /* رنگ متن تیره */
+  transition: all 0.3s ease;  /* انیمیشن انتقال به حالت جدید */
+}
+
+/* استایل‌های اسلاید بار در تم لایت */
+.offcanvas {
+  background-color: #fff;  /* پس‌زمینه سفید */
+  color: #333;  /* رنگ متن تیره */
+}
+
+.offcanvas .offcanvas-header {
+  background-color: #f0f0f0;  /* پس‌زمینه هدر سفید */
+}
+
+.profile-menu li {
+  color: #333;  /* رنگ متن منو تیره */
+}
+
+.profile-menu li:hover {
+  background-color: #f0f0f0;  /* رنگ پس‌زمینه منو روی هاور */
+}
+
+
+
+/* دکمه‌های شناور */
+.floating-btn {
+  background-color: #444; /* رنگ دکمه شناور در حالت دارک */
+  color: #fff;
+}
+
+
+
+/* استایل مخصوص برای تغییر تم */
+.theme-toggle {
+  color: #bbb;  /* رنگ آیکن ماه و خورشید */
+}
+
+body.dark-mode .theme-toggle {
+  color: #ddd;  /* رنگ روشن برای آیکن در حالت دارک */
+}
+
+
+        /* استایل دکمه‌های شناور */
+        .floating-btn {
+          position: fixed;
+          bottom: 5px;
+          width: 60;
+          height:60;
+          border-radius: 70%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 60px;
+          color: #000000;
+          box-shadow: 0 4px 8px rgba(1, 0.9, 0.9, 0.99);
+          cursor: pointer;
+        
+          z-index: 1050;
+          transition: transform 000000s ease, background-color 1000s ease;
+      }
+
+
+      /* دکمه پروفایل در سمت چپ */
+      #profile-btn {
+          right: 20px;
+      }
+
+      /* دکمه سبد خرید در سمت راست */
+      #cart-btn {
+          left: 20px;
+      }
+
+      /* mnu دکمه باز کردن منو در پایین وسط دوتا دکمه */
+      #menu-btn {
+          bottom: 20px; /* بالا بردن دکمه منو از دکمه‌های دیگر */
+          left: 43%;
+          display: none; /* نمایش این دکمه فقط در صفحات کوچک */
+          transition: transform 0 ease, background-color 1s ease;
+          box-shadow: 0 4px 8px rgba(0.5, 0.5, 0.5, 0.5);
+
+
+        }
+        #menu-btn:hover {
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+
+
+        }
+
+      /* استایل پنل‌های offcanvas */
+      .offcanvas {
+          transition: transform 0.6s ease-in-out; /* زمان انیمیشن باز و بسته شدن */
+          visibility: hidden; /* مخفی کردن پنل‌ها به صورت پیش‌فرض */
+          max-width: 400px; /* افزایش اندازه پنل‌ها */
+      }
+
+      .offcanvas.show {
+          visibility: visible;
+      }
+
+      .offcanvas-start, .offcanvas-end {
+          transition: transform 0.6s ease-in-out;
+      }
+
+      .offcanvas-start.hide, .offcanvas-end.hide {
+          transform: translateX(-100%);
+      }
+
+      /* استایل نوار ناوبری */
+      .navbar {
+          background-color: #fff;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-brand {
+          font-weight: bold;
+      }
+
+      /* استایل پروفایل (شبیه تلگرام) */
+      .offcanvas-profile {
+          background-color: #f7f7f7; /* رنگ زمینه پروفایل */
+          padding: 20px;
+          border-radius: 12px;
+      }
+
+      .profile-header {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          margin-bottom: 20px;
+      }
+
+      .profile-header img {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-bottom: 10px;
+      }
+
+      .profile-header h5 {
+          margin: 0;
+          font-size: 18px;
+      }
+
+      .profile-header p {
+          margin: 5px 0;
+          color: #777;
+      }
+
+      .profile-header button {
+          background: none;
+          border: none;
+          font-size: 18px;
+          color: #888;
+          cursor: pointer;
+      }
+
+      /* منوهای پروفایل */
+      .profile-menu {
+          padding: 10px;
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .profile-menu li {
+          padding: 12px;
+          cursor: pointer;
+          border-bottom: 1px solid #f0f0f0;
+      }
+
+      .profile-menu li:last-child {
+          border-bottom: none;
+      }
+
+      .profile-menu li:hover {
+          background-color: #f0f0f0;
+      }
+
+
+      /* استایل برای نمایش دکمه منو در صفحات کوچک */
+      @media (max-width: 767px) {
+          #menu-btn {
+              display: block;
+          }
+      }
+
+/* استایل‌های پایه برای تم لایت */
+body {
+  background-color: #f7f7f7;  /* پس‌زمینه روشن */
+  color: #333;  /* رنگ متن تیره */
+  transition: all 0.3s ease;  /* انیمیشن انتقال به حالت جدید */
+}
+
+/* نوار بالایی همیشه لایت باقی می‌ماند */
+.navbar {
+  background-color: #fff;  /* پس‌زمینه سفید */
+  color: #333;  /* رنگ متن تیره */
+}
+
+.navbar a {
+  color: #333;  /* لینک‌ها در حالت لایت */
+}
+
+.navbar a:hover {
+  color: #007bff;  /* رنگ لینک‌ها هنگام هاور */
+}
+
+/* استایل‌های اسلاید بار در تم لایت */
+.offcanvas {
+  background-color: #fff;  /* پس‌زمینه سفید */
+  color: #333;  /* رنگ متن تیره */
+}
+
+.offcanvas .offcanvas-header {
+  background-color: #f0f0f0;  /* پس‌زمینه هدر سفید */
+}
+
+/* استایل منوهای پروفایل */
+.profile-menu li {
+  color: #333;  /* رنگ متن منو تیره */
+}
+
+.profile-menu li:hover {
+  background-color: #f0f0f0;  /* رنگ پس‌زمینه منو روی هاور */
+}
+
+
+/* استایل‌های خاص برای اینکه اسلاید بار و سبد خرید در هر دو حالت لایت و دارک مشابه بمانند */
+#cart .offcanvas-body, #profile .offcanvas-body {
+  background-color: #fff; /* پس‌زمینه سفید برای هر دو حالت */
+  color: #333; /* رنگ متن تیره */
+}
+
+/* استایل برای دکمه‌های پروفایل و خرید */
+#cart-items, .profile-menu {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#cart-items li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.profile-menu li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}

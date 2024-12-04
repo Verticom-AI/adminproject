@@ -1,0 +1,222 @@
+/* تنظیمات پایه */
+body {
+    font-family: 'IRANSans', sans-serif;
+    background-color: #f4f4f7; /* پس‌زمینه ملایم */
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* جعبه چت */
+.chat-box {
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    background-color: #ffffff;
+    height: 350px;
+    overflow-y: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* ترتیب پیام‌ها از بالا به پایین */
+    padding: 10px;
+}
+
+.chat-message {
+    margin-bottom: 15px;
+    padding: 12px 20px;
+    border-radius: 20px;
+    max-width: 75%;
+    font-size: 15px;
+    line-height: 1.5;
+    display: inline-block;
+}
+
+.chat-message.admin {
+    background-color: #0071e3; /* رنگ آبی  */
+    color: white;
+    text-align: right;
+    margin-left: auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.chat-message.user {
+    background-color: #e8e8ea; /* رنگ خاکستری روشن */
+    color: #333;
+    text-align: left;
+    margin-right: auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* لیست محصولات */
+.product-list {
+    max-height: 250px;
+    overflow-y: auto;
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+
+
+button {
+    display: inline-block;
+    background: #f5f5f7; /* رنگ پس‌زمینه شبیه اپل */
+    color: #1d1d1f; /* متن مشکی با کنتراست بالا */
+    font-weight: 600; /* وزن متن کمی سنگین‌تر */
+    font-size: 16px; /* اندازه متن */
+    padding: 12px 24px; /* فاصله داخلی */
+    border: 1px solid #d2d2d7; /* حاشیه ظریف */
+    border-radius: 24px; /* گوشه‌های گرد */
+    text-decoration: none; /* حذف خط زیر متن */
+    transition: all 0.3s ease; /* انیمیشن نرم */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* سایه ظریف */
+    text-align: center;
+    line-height: 1.5;
+}
+
+button:hover {
+    background: #e5e5ea; /* تغییر رنگ در هاور */
+    color: #1d1d1f; /* متن مشکی */
+    border-color: #c7c7cc; /* تغییر رنگ حاشیه */
+    transform: translateY(-2px); /* حرکت کمی به بالا */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* افزایش سایه */
+}
+.btn-apple {
+    display: inline-block;
+    background: #f5f5f7; /* رنگ پس‌زمینه شبیه اپل */
+    color: #1d1d1f; /* متن مشکی با کنتراست بالا */
+    font-weight: 600; /* وزن متن کمی سنگین‌تر */
+    font-size: 16px; /* اندازه متن */
+    padding: 12px 24px; /* فاصله داخلی */
+    border: 1px solid #d2d2d7; /* حاشیه ظریف */
+    border-radius: 24px; /* گوشه‌های گرد */
+    text-decoration: none; /* حذف خط زیر متن */
+    transition: all 0.3s ease; /* انیمیشن نرم */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* سایه ظریف */
+    text-align: center;
+    line-height: 1.5;
+}
+
+.btn-apple:hover {
+    background: #e5e5ea; /* تغییر رنگ در هاور */
+    color: #1d1d1f; /* متن مشکی */
+    border-color: #c7c7cc; /* تغییر رنگ حاشیه */
+    transform: translateY(-2px); /* حرکت کمی به بالا */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* افزایش سایه */
+}
+.btn-apple:active {
+    background: #d2d2d7; /* رنگ کمی تیره‌تر */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* کاهش سایه */
+    transform: translateY(1px); /* حرکت کمی به پایین */
+}
+
+/* دکمه ضبط صدا */
+#record-button {
+    width: 60px;
+    height: 60px;
+    background-color: #0071e3; /* رنگ آبی اپل */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#record-button:hover {
+    background-color: #005bb5; /* آبی تیره‌تر */
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+#record-button:active {
+    background-color: #ed2cc3; /* قرمز ضبط */
+    transform: scale(0.9);
+}
+
+#record-button.recording {
+    background-color: #ff3b30;
+    color: white;
+    box-shadow: 0 6px 15px rgba(62, 16, 201, 0.3); /* سایه قرمز */
+}
+
+/* دکمه‌ها */
+button {
+    font-family: 'IRANSans', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+    transform: scale(0.95);
+    box-shadow: none;
+}
+
+/* استایل‌های عمومی */
+input, textarea {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 12px 15px;
+    width: 100%;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #0071e3;
+    box-shadow: 0 0 5px rgba(0, 113, 227, 0.3);
+    outline: none;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'IRANSans', sans-serif;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+h4 {
+    font-size: 18px;
+}
+button {
+    background: linear-gradient(135deg, #ffffff, #ffffff); /* گرادیان آبی به بنفش */
+    color: #080707; /* متن سفید */
+    font-weight: bold;
+    border: none; /* حذف حاشیه */
+    border-radius: 50px; /* گوشه‌های گرد */
+    padding: 12px 20px; /* فاصله داخلی */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* سایه نرم */
+    transition: all 0.3s ease; /* انیمیشن نرم */
+}
+
+button:hover {
+    background: linear-gradient(135deg, #dad8de, #c2c8cf); /* تغییر جهت گرادیان در هاور */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* افزایش سایه */
+    transform: translateY(-2px); /* حرکت به بالا */
+}
