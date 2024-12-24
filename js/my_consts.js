@@ -182,10 +182,8 @@ constructor() {
     this.chatBox = document.getElementById("chat-box");
     this.chatInput = document.getElementById("chat-input");
     this.actionButton = document.getElementById("action-button");
-    this.chatListContainer = document.getElementById("chat-list-container");
+    this.chatListContainer = document.getElementById("chat-list-container2");
     this.consultations = [
-        { id: 1, user: "علی محمدی", messages: ["سلام", "مشکل من در مورد فیبروم هست"] },
-        { id: 2, user: "سارا احمدی", messages: ["سلام", "ریزش مو دارم و دنبال راه‌حل هستم"] },
     ];
 
 

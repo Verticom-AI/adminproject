@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وب سلامتی </title>
+    <!-- بوت‌استرپ -->
+    <link rel="stylesheet" href="css/bootstrap.rtl.min.css">
+    <!-- استایل‌های سفارشی -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: 'IRANSans', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .payment-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .payment-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .payment-header h1 {
+            font-size: 28px;
+            color: #333;
+        }
+
+        .form-control {
+            border-radius: 10px;
+        }
+
+        .btn-pay {
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-size: 18px;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .btn-pay:hover {
+            background: linear-gradient(135deg, #2E7D32, #4CAF50);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .order-summary {
+            margin-bottom: 30px;
+        }
+
+        .order-summary h4 {
+            border-bottom: 2px solid #f1f1f1;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .total {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- هدر -->
+    <header class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">وب سلامتی</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">خانه</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">محصولات</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="login.html">ورود</a></li>
+                    <li class="nav-item"><a class="nav-link" href="register.html">ثبت‌نام</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">تماس با ما</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="central-const.html">مشاوره</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="admin-consultation.html">ادمین</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </header>
+    
+    <!-- صفحه پرداخت -->
+    <div class="container">
+        <div class="payment-container">
+            <!-- سربرگ -->
+            <div class="payment-header">
+                <h1>پرداخت آنلاین</h1>
+                <p>اطلاعات پرداخت خود را وارد کنید تا سفارش شما تکمیل شود</p>
+            </div>
+
+            <!-- جزئیات سفارش -->
+            <div class="order-summary">
+                <h4>جزئیات سفارش</h4>
+                <ul class="list-unstyled">
+                    <li class="d-flex justify-content-between">
+                        <span>محصول 1</span>
+                        <span>200,000 تومان</span>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                        <span>محصول 2</span>
+                        <span>150,000 تومان</span>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                        <span>هزینه ارسال</span>
+                        <span>20,000 تومان</span>
+                    </li>
+                </ul>
+                <hr>
+                <div class="d-flex justify-content-between total">
+                    <span>جمع‌کل</span>
+                    <span>370,000 تومان</span>
+                </div>
+            </div>
+
+            <!-- فرم پرداخت -->
+            <form>
+                <div class="mb-3">
+                    <label for="cardNumber" class="form-label">شماره کارت</label>
+                    <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="cardName" class="form-label">نام صاحب کارت</label>
+                    <input type="text" class="form-control" id="cardName" placeholder="نام و نام خانوادگی" required>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="expiryDate" class="form-label">تاریخ انقضا</label>
+                        <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="cvv" class="form-label">CVV</label>
+                        <input type="password" class="form-control" id="cvv" placeholder="123" required>
+                    </div>
+                </div>
+
+                <!-- دکمه پرداخت -->
+                <button type="submit" class="btn-pay">پرداخت</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

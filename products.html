@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مشاوره ریزش مو | وب سلامتی</title>
-    <!-- بوت‌استرپ -->
-    <!-- بوت‌استرپ -->
-    <link rel="stylesheet" href="css/bootstrap.rtl.min.css">
+        <!-- name heree-->
+
+        <title>ثبت‌نام | وب سلامتی</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/admin-consultation.css">
 
     <link rel="stylesheet" href="css/newStyle.css">
-
     <link rel="stylesheet" href="css/style.css">
+
+<style >
+</style>
+
 </head>
 <body>
-    <!-- هدر -->
+
+    <!-- هدر سایت -->
     <header class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="index.html">وب سلامتی</a>
-
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">خانه</a></li>
@@ -27,55 +32,32 @@
                     <li class="nav-item"><a class="nav-link active" href="login.html">ورود</a></li>
                     <li class="nav-item"><a class="nav-link" href="register.html">ثبت‌نام</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">تماس با ما</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="central-const.html">مشاوره</a></li>
-
                 </ul>
             </div>
         </div>
     </header>
 
-    <!-- محتوای صفحه -->
+   <!-- new temps-->
+
+
+    <!-- محصولات -->
     <main class="container my-5">
-        <h2 class="text-center mb-4">مشاوره ریزش مو</h2>
-        <p class="text-center mb-5">اطلاعات مرتبط با درمان ریزش مو را مشاهده کنید.</p>
-
-        <!-- ویدیوها -->
-        <div class="row">
-            <div class="col-md-6 mb-4">
-                <video controls class="w-100">
-                    <source src="videos/fibroid-video1.mp4" type="video/mp4">
-                    مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
-                </video>
-                <h5 class="mt-2">ویدیو: درمان‌های ریزش مو</h5>
-            </div>
-            <div class="col-md-6 mb-4">
-                <video controls class="w-100">
-                    <source src="videos/fibroid-video2.mp4" type="video/mp4">
-                    مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
-                </video>
-                <h5 class="mt-2">ویدیو: پیشگیری از ریزش مو</h5>
-            </div>
-        </div>
-
-        <!-- توضیحات -->
-        <section class="mb-5">
-            <h3>اطلاعات مرتبط</h3>
-            <p>ریزش مو یکی از شایع‌ترین مشکلات زنان است. در این بخش به توضیح روش‌های درمان و پیشگیری پرداخته شده است.</p>
-        </section>
-
-        <!-- دکمه مشاوره اختصاصی -->
-        <div class="text-center">
-            <a href="private-consultation.html" class="btn btn-apple">درخواست مشاوره تخصصی </a>
+        <h1 class="text-center mb-4">محصولات</h1>
+        <div class="row" id="products">
+            <!-- محصولات با جاوااسکریپت اضافه می‌شوند -->
         </div>
     </main>
-    <!-- اسکریپت‌ها -->
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/allcons.js"></script>
 
+
+
+   <!-- new temps-->
+
+    
     <!-- دکمه‌های شناور -->
     <div id="menu-btn" class="floating-btn">
         <span>&#9776;</span> <!-- آیکن همبرگر -->
     </div>
+
     <div id="cart-btn" class="floating-btn">
         <span>&#128722;</span> <!-- آیکن سبد خرید -->
     </div>
@@ -88,10 +70,11 @@
     <div id="menu" class="menu">
         <div class="menu-item"><a href="index.html"><i class="fas fa-home"></i> خانه</a></div>
         <div class="menu-item"><a href="products.html"><i class="fas fa-box"></i> محصولات</a></div>
+        <div class="menu-item"><a href="cart.html"><i class="fas fa-shopping-cart"></i> سبد خرید</a></div>
+        <div class="menu-item"><a href="admin-consultation.html"><i class="fas fa-user-tie"></i> ادمین</a></div>
+        <div class="menu-item"><a href="bigbus.html"><i class="fas fa-briefcase"></i> مدیر کل</a></div>
         <div class="menu-item"><a href="about.html"><i class="fas fa-info-circle"></i> درباره ما</a></div>
         <div class="menu-item"><a href="contact.html"><i class="fas fa-envelope"></i> تماس با ما</a></div>
-        <div class="menu-item"><a href="central-const.html"><i class="fas fa-envelope"></i> مشاوره‌ها</a></div>
-
         <div class="menu-item"><a href="login.html"><i class="fas fa-sign-in-alt"></i> ورود</a></div>
         <div class="menu-item"><a href="logout.html"><i class="fas fa-sign-out-alt"></i> خروج</a></div>
         <div class="menu-item search-box">
@@ -109,21 +92,20 @@
     <!-- سبد خرید -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="cart" aria-labelledby="cartLabel">
         <div class="offcanvas-header">
-            <h5 id="cartLabel">خوش آمدید</h5>
+            <h5 id="cartLabel">سبد خرید</h5>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-         
-            <button class="btn btn-success w-100 mt-3"></button>
-            <button class="btn btn-success w-100 mt-3"></button>
-            <button class="btn btn-success w-100 mt-3"></button>
-            <button class="btn btn-success w-100 mt-3"></button>
-            <button class="btn btn-success w-100 mt-3"></button>
-            <button class="btn btn-success w-100 mt-3"></button>
-            <button class="btn btn-success w-100 mt-3"></button>
+            <ul id="cart-items" class="list-group mb-3">
+                <!-- آیتم‌های سبد خرید -->
+            </ul>
+            <div class="d-flex justify-content-between">
+                <span>جمع کل:</span>
+                <strong id="total-price">0 تومان</strong>
+            </div>
+            <button class="btn btn-success w-100 mt-3">پرداخت</button>
         </div>
     </div>
-
         <!-- پروفایل کاربری -->
         <div class="offcanvas offcanvas-start" tabindex="-1" id="profile" aria-labelledby="profileLabel">
             <div class="offcanvas-header">
@@ -168,13 +150,9 @@
     </footer>
 
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script  src="js/template.js">    </script>
-    <script  src="js/admin-consultation.js">    </script>
-    <!-- اسکریپت‌ها -->
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/allcons.js"></script>
+    <script  src="js/newStyle.js">    </script>
 
+    <script src="js/products.js"></script>
 
 </body>
 </html>
-
