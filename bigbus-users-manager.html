@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- name heree-->
+
+        <title>مدیریت کاربران | وب سلامتی</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/newStyle.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        // جلوگیری از وارد کردن حروف در فیلدهای عددی
+        function validateNumber(event) {
+            const regex = /[^0-9]/g;
+            if (regex.test(event.target.value)) {
+                event.target.value = event.target.value.replace(regex, ''); // حذف حروف
+            }
+        }
+
+        // اضافه کردن سال‌ها از 1300 تا 1400 به select
+        window.onload = function() {
+            const yearSelect = document.getElementById("birth-year");
+            for (let i = 1300; i <= 1400; i++) {
+                const option = document.createElement("option");
+                option.value = i;
+                option.textContent = i;
+                yearSelect.appendChild(option);
+            }
+
+            // اضافه کردن روزهای ماه به select
+            const daySelect = document.getElementById("birth-day");
+            for (let i = 1; i <= 31; i++) {
+                const option = document.createElement("option");
+                option.value = i;
+                option.textContent = i;
+                daySelect.appendChild(option);
+            }
+
+            // اضافه کردن ماه‌های سال به select
+            const monthSelect = document.getElementById("birth-month");
+            const months = [
+                'فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 
+                'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'
+            ];
+            months.forEach((month, index) => {
+                const option = document.createElement("option");
+                option.value = index + 1;
+                option.textContent = month;
+                monthSelect.appendChild(option);
+            });
+        }
+    </script>
+
+</head>
+<body>
+
+            <!-- هدر -->
+            <header class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html">وب سلامتی</a>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item"><a class="nav-link" href="index.html">خانه</a></li>
+                            <li class="nav-item"><a class="nav-link" href="consultation.html">مشاوره‌ها</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">تماس با ما</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+        
+
+        
+    </main>
+
+
+
+   <!-- new temps-->
+
+    
+
+   <div class="container mt-5">
+    <h1>مدیریت کاربران</h1>
+
+    <!-- جدول کاربران -->
+    <table class="table table-bordered table-striped mt-4">
+        <thead>
+            <tr>
+                <th>نام</th>
+                <th>نام خانوادگی</th>
+                <th>تاریخ شروع عضویت</th>
+                <th>نوع کاربر</th>
+                <th>عملیات</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- نمونه کاربر 1 -->
+            <tr>
+                <td>محمد</td>
+                <td>علیزاده</td>
+                <td>1402/03/01</td>
+                <td>ادمین</td>
+                <td><button class="btn btn-danger" onclick="deleteUser(1)">حذف</button></td>
+            </tr>
+            <!-- نمونه کاربر 2 -->
+            <tr>
+                <td>سارا</td>
+                <td>حسینی</td>
+                <td>1402/01/15</td>
+                <td>انباردار</td>
+                <td><button class="btn btn-danger" onclick="deleteUser(2)">حذف</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- فرم اضافه کردن کاربر -->
+    <h2 class="mt-5">اضافه کردن کاربر جدید</h2>
+
+    <form action="/addUser" method="POST">
+        <div class="row">
+            <!-- بخش اطلاعات شخصی -->
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-header bg-primary text-white">
+                        <h5>اطلاعات شخصی</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="firstName" class="form-label">نام:</label>
+                            <input type="text" id="firstName" name="firstName" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="lastName" class="form-label">نام خانوادگی:</label>
+                            <input type="text" id="lastName" name="lastName" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                                <label for="birthdate" class="form-label">>تاریخ شروع عضویت:</label>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <select class="form-select" id="birth-day" name="birth_day" required>
+                                            <!-- روزها به صورت داینامیک اضافه می‌شود -->
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <select class="form-select" id="birth-month" name="birth_month" required>
+                                            <!-- ماه‌ها به صورت داینامیک اضافه می‌شود -->
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <select class="form-select" id="birth-year" name="birth_year" required>
+                                            <option value="" disabled selected>سال</option>
+                                            <!-- سال‌ها به صورت داینامیک اضافه می‌شود -->
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <div class="mb-3">
+                            <label for="userType" class="form-label">نوع کاربر:</label>
+                            <select id="userType" name="userType" class="form-select" required>
+                                <option value="normal">کاربر معمولی</option>
+                                <option value="admin">ادمین</option>
+                                <option value="warehouse">انباردار</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- بخش اطلاعات ورود -->
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-header bg-success text-white">
+                        <h5>اطلاعات ورود</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="gender" class="form-label">جنسیت:</label>
+                            <select id="gender" name="gender" class="form-select" required>
+                                <option value="female">زن</option>
+                                <option value="male">مرد</option>
+
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">شماره تلفن:</label>
+                            <input type="text" id="phone" name="phone" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">نام کاربری:</label>
+                            <input type="text" id="username" name="username" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">پسورد:</label>
+                            <input type="password" id="password" name="password" class="form-control" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- دکمه ارسال -->
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">اضافه کردن کاربر</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    function deleteUser(userId) {
+        if (confirm("آیا از حذف این کاربر اطمینان دارید؟")) {
+            // ارسال درخواست حذف کاربر
+            alert('کاربر با ID ' + userId + ' حذف شد.');
+        }
+    }
+</script>
+
+
+
+      <!-- new temps-->
+
+
+    <!-- دکمه‌های شناور -->
+    <div id="menu-btn" class="floating-btn">
+        <span>&#9776;</span> <!-- آیکن همبرگر -->
+    </div>
+    <div id="cart-btn" class="floating-btn" >
+        <span>💬</span> <!-- آیکن جدید برای مشاوره‌ها -->
+    </div>
+
+    <div id="profile-btn" class="floating-btn">
+        <span>&#128100;</span> <!-- آیکن پروفایل -->
+    </div>
+
+    <!-- منو شناور -->
+    <div id="menu" class="menu">
+        <div class="menu-item"><a href="index.html"><i class="fas fa-home"></i> خانه</a></div>
+        <div class="menu-item"><a href="products.html"><i class="fas fa-box"></i> محصولات</a></div>
+        <div class="menu-item"><a href="cart.html"><i class="fas fa-shopping-cart"></i> سبد خرید</a></div>
+        <div class="menu-item"><a href="admin-consultation.html"><i class="fas fa-user-tie"></i> ادمین</a></div>
+        <div class="menu-item"><a href="bigbus.html"><i class="fas fa-briefcase"></i> مدیر کل</a></div>
+        <div class="menu-item"><a href="about.html"><i class="fas fa-info-circle"></i> درباره ما</a></div>
+        <div class="menu-item"><a href="contact.html"><i class="fas fa-envelope"></i> تماس با ما</a></div>
+        <div class="menu-item"><a href="login.html"><i class="fas fa-sign-in-alt"></i> ورود</a></div>
+        <div class="menu-item"><a href="logout.html"><i class="fas fa-sign-out-alt"></i> خروج</a></div>
+        <div class="menu-item search-box">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="جستجو کنید..." />
+                <i class="fas fa-search"></i>
+            </div>
+            <ul id="search-results" class="search-results">
+                <!-- نتایج جستجو به صورت داینامیک در اینجا ظاهر می‌شوند -->
+            </ul>
+    </div>
+        
+    </div>
+
+    <!-- ساید بار سمت چپ -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cart" aria-labelledby="cartLabel">
+        <div class="offcanvas-header">
+            <h5 id="cartLabel"></h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+    <div class="slide-bar" id="slide-bar">
+        <h5 class="text-center">مشاوره‌ها</h5>
+        <div id="consultation-list" class="chat-list">
+            <!-- اینجا لیست مشاوره‌ها بارگذاری می‌شود -->
+        </div>
+    </div>
+    </div>
+</div>
+    </div>
+
+     <!-- پروفایل کاربری -->
+     <div class="offcanvas offcanvas-start" tabindex="-1" id="profile" aria-labelledby="profileLabel">
+        <div class="offcanvas-header">
+            <h5 id="profileLabel"></h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="profile-header">
+                <img src="images/ico/prof2.jpg" alt="Profile Picture" class="img-fluid rounded-circle">
+                <h5>نام کاربر</h5>
+                <p>user@example.com</p>
+            </div>
+            <ul class="profile-menu">
+                <li><a href="bigbus.html" class="btn btn-outline-primary w-100 text-start"><i class="fas fa-shopping-bag"></i> داشبورد من</a></li>
+                <li><a href="bigbus-users-manager.html" class="btn btn-outline-primary w-100 text-start"><i class="fas fa-comments"></i> مدیریت کاربران</a></li>
+                <li><a href="bigbus-new-consultations.html" class="btn btn-outline-primary w-100 text-start"><i class="fas fa-comments"></i> مشاوره‌های جدید</a></li>
+                <li><a href="bigbus-my-consultations.html" class="btn btn-outline-primary w-100 text-start"><i class="fas fa-comments"></i> مشاوره‌های قبلی من </a></li>
+            </ul>
+            
+            
+
+            <ul class="profile-menu-footer">
+                <li>
+                    <a href="https://www.instagram.com/salamati_eskandari" target="_blank" class="btn btn-apple w-100 text-start">
+                        <i class="fab fa-instagram"></i> صفحه اینستاگرام سلامتی
+                    </a>
+                </li>
+                <li>
+                    <a href="https://t.me/salamati_eskandari" target="_blank" class="btn btn-apple w-100 text-start">
+                        <i class="fab fa-telegram"></i> صفحه تلگرام سلامتی
+                    </a>
+                </li>
+            </ul>
+            
+            
+        </div>
+    </div>
+
+
+    <footer class="bg-dark text-light py-4">
+        <div class="container text-center">
+            <p>تمامی حقوق محفوظ است &copy; 2024</p>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/template.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script>
+
+    </script>
+    
+    </body>
+    </html>
